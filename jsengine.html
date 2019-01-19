@@ -503,7 +503,7 @@
                 context.fillStyle="#FF0000";
                 context.fillRect(0 - camX + X + (canvas.width / 2) - 18,camY + (0 - Y) + (canvas.height / 2) - 18,36,36)
                 context.fillText(X + "  " + Y + "     " + entity + "   " + data9 + "     " + fps,10,20)
-                if (edit === 1 && img[ai(0,+entity)] !== 0 && img[ai(0,+entity)] !== undefined) {DrawImage(context,img[ai(0,+entity)],canvas.width - (img[ai(0,+entity)].width),0,img[ai(0,+entity)].width,img[ai(0,+entity)].height,0)};
+                //if (edit === 1 && img[ai(0,+entity)] !== 0 && img[ai(0,+entity)] !== undefined) {DrawImage(context,img[ai(0,+entity)],canvas.width - (img[ai(0,+entity)].width),0,img[ai(0,+entity)].width,img[ai(0,+entity)].height,0)};
             };
         reset_temp();
         document.addEventListener("keydown", keyDownHandler, false)
