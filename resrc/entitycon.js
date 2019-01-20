@@ -62,7 +62,7 @@
                             eY[eY.length] = eY[i];
 							edata[edata.length] = edir[i];
 							//accuracy
-                            edata[edata.length] = edir[i] + (Math.random() - Math.random()) / 5;
+                            //edata[edata.length] = edir[i] + (Math.random() - Math.random()) / 5;
 							//range
                             edata2[edata.length] = 200;
                             edata3[edata.length] = 0;

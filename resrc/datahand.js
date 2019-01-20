@@ -44,17 +44,20 @@ var loadImgs = function() {
 	var temp = [0];
 	var tem = 0;
 	for (var i = 0; i < eID.length; i++) {
-		tem = ai(i, 0);
-		if (!(temp.includes(tem)) && tem !== 0 && tem != "0" && typeof tem !== 'undefined') {
-			temp[temp.length] = tem;
-		};
+		tem = getEntityTex(eID[i]);
+		for (var n = 0; n < tem.length; n++) {
+			if (!(temp.includes(tem[n])) && tem[n] !== 0 && tem[n] != "0" && typeof tem[n] !== 'undefined') {
+				temp[temp.length] = tem[n];
+			};
+		};	
 	};
 	for (var i = 0; i < temp.length; i++) {
 		img[temp[i]] = new Image();
-		img[temp[i]].src = "./resrc/" + temp[i] + ".png";
+		img[temp[i]].src = "./resrc/img/" + temp[i] + ".png";
+		console.log(img);
 	};
 	img[0] = new Image();
 	img[0].src = "https://dummyimage.com/36x36/000000/ffe100.jpg"
 	bg[1] = new Image()
-    bg[1].src = "./resrc/clouds.png";
+    bg[1].src = "./resrc/img/clouds.png";
 };

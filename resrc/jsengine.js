@@ -171,6 +171,7 @@
                         condelay = 6;
                         extract(entity + "|" + X + ":" + Y + ";" + data9 + "/");
 						initHitbox();
+						loadImgs();
                         saveedit();
                     };
                 };
@@ -201,16 +202,6 @@
                 ctx.drawImage(image, x, y, w, h);
                 ctx.restore();
             };
-            var calcscrX = function(x1) {
-                var x2 = 0 - X;
-                var x3 = x2 + x1;
-                x3 = x3 + (canvas.width / 2);
-                return x3 };
-            var calcscrY = function(y1) {
-                var y2 = 0 - Y;
-                var y3 = y2 + y1;
-                y3 = y3 + (canvas.height / 2);
-                return y3 };
             var extract = function(data) {
                 var i2 = 0;
                 var temp = "";
