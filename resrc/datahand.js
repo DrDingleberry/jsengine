@@ -1,6 +1,6 @@
+var file = new XMLHttpRequest();
 var getLevel = function(lev) {
-	var client = new XMLHttpRequest();
-	client.open('GET', './resrc/levels/' + lev + '.txt');
-	client.send();
-	client.onload(function() {return client.responseText});
+	file.responseType = "text";
+	file.open("GET", "./resrc/levels/" + lev + ".txt", true);
+	file.send();
 };
