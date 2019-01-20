@@ -57,7 +57,7 @@ var loadImgs = function() {
 		console.log(img);
 	};
 	img[0] = new Image();
-	img[0].src = "https://dummyimage.com/36x36/000000/ffe100.jpg"
+	img[0].src = "./resrc/img/0.jpg"
 	bg[1] = new Image()
     bg[1].src = "./resrc/img/clouds.png";
 };
