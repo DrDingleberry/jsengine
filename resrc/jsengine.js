@@ -17,7 +17,7 @@ var BGrend = function (pic, parX, parY, depth) {
 Math.random = (function () {
   var seed = 49734321;
   return function () {
-    // Robert Jenkinsâ€™ 32 bit integer hash function
+    // Robert Jenkins' 32 bit integer hash function
     seed = ((seed + 2127912214) + (seed << 12)) & 4294967295;
     seed = ((seed ^ 3345072700) ^ (seed >>> 19)) & 4294967295;
     seed = ((seed + 374761393) + (seed << 5)) & 4294967295;
@@ -262,47 +262,23 @@ file.onload = function () {
   delcheck();
   initHitbox();
   initSwitch();
-  loadImgs();
+  loadImgs(level);
   levload = 1;
 };
 var reset_temp = function () {
   levload = 0
-  eX = [
-    0
-  ];
-  eY = [
-    0
-  ];
-  eID = [
-    0
-  ];
-  tX = [
-    0
-  ];
-  tY = [
-    0
-  ];
-  edata = [
-    0
-  ];
-  edata2 = [
-    0
-  ];
-  edata3 = [
-    0
-  ];
-  edata4 = [
-    0
-  ];
-  edata5 = [
-    0
-  ];
-  edir = [
-    0
-  ];
-  switches = [
-    0
-  ];
+  eX = [0];
+  eY = [0];
+  eID = [0];
+  tX = [0];
+  tY = [0];
+  edata = [0];
+  edata2 = [0];
+  edata3 = [0];
+  edata4 = [0];
+  edata5 = [0];
+  edir = [0];
+  switches = [0];
   getLevel(level);
   eID[0] = '';
   eX[0] = '';
