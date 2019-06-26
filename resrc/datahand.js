@@ -37,10 +37,19 @@ var img = [0];
 var file = new XMLHttpRequest();
 var getLevel = function(lev) {
 	file.responseType = "text";
-	file.open("GET", "./resrc/levels/" + lev + ".txt", true);
+	file.open("GET", "./resrc/levels/" + lev + "/data.txt", true);
 	file.send();
 };
-var loadImgs = function() {
+var loadScripts = function(url, ID) {
+	var script = document.createElement("script");
+    script.src = url;
+	script.id = ID;
+    document.body.appendChild(script);
+};
+var loadImgs = function(lev) {
+	var ele = document.getElementById("texturelist");
+	ele.parentNode.removeChild(ele);
+	loadScripts("./resrc/levels/" + lev + "/texturelist.js", "texturelist");
 	var temp = [0];
 	var tem = 0;
 	for (var i = 0; i < eID.length; i++) {
@@ -61,3 +70,6 @@ var loadImgs = function() {
 	bg[1] = new Image()
     bg[1].src = "./resrc/img/clouds.png";
 };
+loadScripts("./resrc/levels/1/texturelist.js", "texturelist");
+loadScripts("./resrc/entitycon.js", "entitycon");
+loadScripts("./resrc/jsengine.js", "jsengine");
