@@ -1,5 +1,8 @@
 var canvas = document.getElementById('rendTarget');
 var context = canvas.getContext('2d');
+var currTime = 0;
+var lastTime = 0;
+var deltaTime = 0;
 var colchk = function (x, y) {
   var c = [
     0
@@ -291,7 +294,7 @@ var render = function () {
   if (levload === 1) {
     context.clearRect(0, 0, canvas.width, canvas.height);
     context.fillStyle = '#42f4f1';
-    context.fillRect(0, 0, canvas.width, canvas.height)
+    context.fillRect(0, 0, canvas.width, canvas.height);
     if (drawBG === 1) {
       BGrend(1, 0, 0, 2.5);
       BGrend(1, 1348, 0, 2.5);
@@ -328,22 +331,27 @@ console.log(eY);
 console.log(img);
 window.main = function () {
   window.requestAnimationFrame(main);
-  if (edit === 1) {
-    editor();
-  } else {
-    charmove();
-  };
-  if (document.fullscreenElement === null || document.webkitFullscreenElement === null || document.mozFullScreenElement === null || document.msFullscreenElement === null) {
-    fullscrn = 0;
-    canvas.height = 540;
-    canvas.width = 540;
-  };
-  condelay2 = condelay2 + 1;
-  camX = X;
-  camY = Y;
-  render();
-  if (edit === 0) {
-    collision()
-  };
+  currTime = Date.now();
+  deltaTime = currTime - lastTime;
+	if (deltaTime > 11) { 
+		if (edit === 1) {
+			editor();
+		} else {
+			charmove();
+		};
+		if (document.fullscreenElement === null || document.webkitFullscreenElement === null || document.mozFullScreenElement === null || document.msFullscreenElement === null) {
+			fullscrn = 0;
+			canvas.height = 540;
+			canvas.width = 540;
+		};
+		condelay2 = condelay2 + 1;
+		camX = X;
+		camY = Y;
+		render();
+		if (edit === 0) {
+			collision();
+		};
+		lastTime = Date.now();
+	};
 };
 main();
